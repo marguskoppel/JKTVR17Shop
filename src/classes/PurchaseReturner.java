@@ -25,16 +25,12 @@ public class PurchaseReturner {
         for (int i = 0; i < countPurchases; i++) {
             Purchase p = purchases.get(i);
             if (p.getProductReturn() == null) {
-                System.out.println(i + 1 + ". "+p.getQuantity()+" " + p.getProduct().getName() + ". Bought by: " + p.getCustomer().getName() + " " + p.getCustomer().getSurname() + ". Date: " + sdfDate.format(p.getProductIssued())
-            
-        
-    
-
-);
-            
-            }
+                System.out.println(i + 1 + ". " + p.getQuantity() + " " + p.getProduct().getName() + ". Bought by: " + p.getCustomer().getName() + " " + p.getCustomer().getSurname() + ". Date: " + sdfDate.format(p.getProductIssued())
+                );
 
             }
-            
+
         }
+
+    }
 }
