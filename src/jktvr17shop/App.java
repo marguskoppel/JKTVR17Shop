@@ -23,9 +23,9 @@ import java.util.Scanner;
  */
 public class App {
     
-    private List<Product> products = new ArrayList<>();
-    private List<Customer> customers = new ArrayList<>();
-    private List<Purchase> purchases = new ArrayList<>();
+    private List<Product> products;
+    private List<Customer> customers;
+    private List<Purchase> purchases;
     private Manageable manager = new ConsoleInterface();
     private Retentive saver = new PersistToDatabase();
     
