@@ -7,6 +7,7 @@ package entity;
 
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,16 +22,17 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class Purchase {
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-@OneToOne
+    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
     private Product product;
-@OneToOne
+    @OneToOne(cascade = CascadeType.MERGE, orphanRemoval = true)
     private Customer customer;
-@Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date productReturn;
-@Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date productIssued;
     private Integer quantity;
 
@@ -74,7 +76,6 @@ public class Purchase {
         return productReturn;
     }
 
-    
     public void setProductReturn(Date productReturn) {
         this.productReturn = productReturn;
     }
@@ -142,7 +143,10 @@ public class Purchase {
 
     @Override
     public String toString() {
-        return "Purchase{" + "id=" + id + ", product=" + product.getName() + ", customer=" + customer.getName() + " " + customer.getSurname() + ", productReturn=" + productReturn + ", productIssued=" + productIssued + ", quantity=" + quantity + '}';
+        if(productReturn !=null)
+            return "Purchase{" + "id=" + id + ", product=" + product.getName() + ", customer=" + customer.getName() + " " + customer.getSurname() + ", productIssued=" + productIssued.toString() + ", productReturn=" + productReturn.toString() + ", quantity=" + quantity + '}';
+        else 
+            return "Purchase{" + "id=" + id + ", product=" + product.getName() + ", customer=" + customer.getName() + " " + customer.getSurname() + ", productIssued=" + productIssued.toString() + ", productReturn=" + '}';
     }
 
 }

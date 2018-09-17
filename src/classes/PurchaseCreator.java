@@ -36,10 +36,14 @@ public class PurchaseCreator {
 
         }
         System.out.println("Choose a product, by its number: ");
-        int numberProducts = scanner.nextInt();
-        Product product = products.get(numberProducts - 1);
+        System.out.println("(0 ot EXIT)");
+        int numberProduct = scanner.nextInt();
+        if(numberProduct < 1) return null;
+        Product product = products.get(numberProduct - 1);
         System.out.println("Choose a customer, by its number: ");
+        System.out.println("(-1 to EXIT)");
         int numberCustomer = scanner.nextInt();
+        if(numberCustomer < 0) return null;
         Customer customer = customers.get(numberCustomer - 1);
         System.out.println("Choose quantity: ");
         int quantity = scanner.nextInt();

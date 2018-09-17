@@ -41,7 +41,7 @@ public class ConsoleInterface implements Manageable {
     }
 
     @Override
-    public boolean returnProduct(List<Purchase> purchases) {
+    public Purchase returnProduct(List<Purchase> purchases) {
         ProductReturner productReturner = new ProductReturner();
         return productReturner.returnPurchase(purchases);
     }

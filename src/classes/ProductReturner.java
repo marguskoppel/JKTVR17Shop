@@ -17,8 +17,8 @@ import java.util.Scanner;
  */
 public class ProductReturner {
 
-    public boolean returnPurchase(List<Purchase> purchases) {
-        try {
+    public Purchase returnPurchase(List<Purchase> purchases) {
+        
             System.out.println("*************Product returning*************");
             Purchase purchase = new Purchase();
             Scanner scanner = new Scanner(System.in);
@@ -34,17 +34,14 @@ public class ProductReturner {
             System.out.println("To not to do anything press -1");
             int numPurchase = scanner.nextInt();
             if (numPurchase < 0) {
-                return false;
+                return null;
             }
             purchase = purchases.get(numPurchase - 1);
             purchases.remove(purchase);
             Calendar c = new GregorianCalendar();
             purchase.setProductReturn(c.getTime());
-            return true;
+            return purchase;
 
-        } catch (Exception e) {
-            return false;
-        }
-
+         
     }
 }
