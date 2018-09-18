@@ -7,6 +7,7 @@ package jktvr17shop;
 
 /**
  *
+ * 
  * @author st0lu
  */
 public class JKTVR17Shop {
