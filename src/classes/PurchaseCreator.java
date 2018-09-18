@@ -24,15 +24,15 @@ public class PurchaseCreator {
         System.out.println("List of Products: ");
         int countProducts = products.size();
         for (int i = 0; i < countProducts; i++) {
-            System.out.println(i + 1 + ". " + products.get(i).getName() + " " + products.get(i).getPrice()
-                    + " " + products.get(i).getCount());
+            System.out.println(i + 1 + ". " + products.get(i).getName() + " || Cost: " + products.get(i).getPrice()
+                    + " || Quantity at the shop: " + products.get(i).getCount());
         }
         System.out.println("list of Customers: ");
         int countCustomers = customers.size();
         for (int i = 0; i < countCustomers; i++) {
             System.out.println(i + 1 + ". " + customers.get(i).getName()
                     + " " + customers.get(i).getSurname()
-                    + " " + customers.get(i).getMoney());
+                    + " || Available money: " + customers.get(i).getMoney());
 
         }
         System.out.println("Choose a product, by its number: ");

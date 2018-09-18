@@ -27,10 +27,11 @@ public class ProductCreator {
         product.setPrice(scanner.nextInt());
         System.out.println("Product Count: ");
         product.setCount(scanner.nextInt());
-        System.out.println("To ADD push any button\n For Cancel press -1");
+        System.out.println("To ADD push A\n For Cancel press -1");
+        String add = "a";
         String yes = "";
         yes = scanner.next();
-        if(!"".equals(yes)){
+        if(!add.equals(yes)){
             System.out.println("***** Product IS NOT added *****");
             return null;
         }else{

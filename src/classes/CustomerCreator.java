@@ -26,10 +26,11 @@ public class CustomerCreator {
         customer.setSurname(scanner.nextLine());
         System.out.println("Money: ");
         customer.setMoney(scanner.nextInt());
-        System.out.println("To ADD press any button\n To cancel press -1");
+        System.out.println("To ADD press A\n To cancel press -1");
+        String add = "a";
         String yes = "";
         yes = scanner.next();
-        if(!"".equals(yes)){
+        if(!add.equals(yes)){
             System.out.println("*****Customer WAS NOT added *****");
             return null;
         }else{
