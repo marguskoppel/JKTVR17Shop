@@ -3,7 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/jktvr17shop/JKTVR17Shop.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/interfaces/Retentive.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/classes/PurchaseReturner.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/classes/PurchaseCreator.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/jktvr17shop/PersistToDatabase.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/classes/CustomerCreator.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/entity/Purchase.java</file>
             <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/jktvr17shop/App.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/entity/Customer.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/classes/ProductCreator.java</file>
+            <file>file:/D:/JKTVR17/second_year_java/Java/JKTVR17Shop/src/classes/ProductReturner.java</file>
         </group>
     </open-files>
 </project-private>

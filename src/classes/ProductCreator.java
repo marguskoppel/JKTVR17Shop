@@ -27,16 +27,16 @@ public class ProductCreator {
         product.setPrice(scanner.nextInt());
         System.out.println("Product Count: ");
         product.setCount(scanner.nextInt());
-        System.out.println("To ADD push A\n For Cancel press -1");
-        String add = "a";
+        System.out.println("To ADD push any button\n For Cancel press -1");
+
         String yes = "";
         yes = scanner.next();
-        if(!add.equals(yes)){
-            System.out.println("***** Product IS NOT added *****");
+        if ("-1".equals(yes)) {
+            System.out.println("***** Product IS NOT added *****\n");
             return null;
-        }else{
-            System.out.println("***** Product IS added *****");
-        return product;
+        } else {
+            System.out.println("***** Product: " + product.getName() + " with the price of: " + product.getPrice() + " and in quantity of: " + product.getCount() + " WAS ADDED *****\n");
+            return product;
+        }
     }
-}
 }

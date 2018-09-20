@@ -18,6 +18,7 @@ import java.util.Scanner;
  * @author st0lu
  */
 public class PurchaseCreator {
+
     public Purchase returnNewPurchase(List<Product> products, List<Customer> customers) {
         System.out.println("******************Selling product(s) to customer(s)********************");
         Scanner scanner = new Scanner(System.in);
@@ -38,19 +39,48 @@ public class PurchaseCreator {
         System.out.println("Choose a product, by its number: ");
         System.out.println("(0 ot EXIT)");
         int numberProduct = scanner.nextInt();
-        if(numberProduct < 1) return null;
+        if (numberProduct < 1) {
+            return null;
+        }
         Product product = products.get(numberProduct - 1);
         System.out.println("Choose a customer, by its number: ");
         System.out.println("(-1 to EXIT)");
         int numberCustomer = scanner.nextInt();
-        if(numberCustomer < 0) return null;
+        if (numberCustomer < 0) {
+            return null;
+        }
         Customer customer = customers.get(numberCustomer - 1);
         System.out.println("Choose quantity: ");
         int quantity = scanner.nextInt();
+        if (product.getCount() - quantity < 0) { //product quantity check
+            System.out.println("There is not enough product in the shop");
+            return null;
+
+        }
+        if (product.getPrice() * quantity > customer.getMoney()) {//money check
+            System.out.println("Customer doesnt have enough money");
+            return null;
+
+        }
+        if (customer.getMoney() <= 0) { //customer money check
+            System.out.println("Customer doesnt have any money");
+            return null;
+        }
+        if (product.getCount() <= 0) {//product count check
+            System.out.println("Ther is no more of this product at the shop");
+            return null;
+
+        }
+
         Calendar c = new GregorianCalendar();
-        Purchase purchase = new Purchase(null, product, customer,null, c.getTime(), quantity);
+        Purchase purchase = new Purchase(null, product, customer, null, c.getTime(), quantity);
+        purchase.getCustomer().setMoney(purchase.getCustomer().getMoney() - purchase.getProduct().getPrice() * purchase.getQuantity());
+        purchase.getProduct().setCount(purchase.getProduct().getCount() - purchase.getQuantity());
+        System.out.println("==========PURCHASE WAS SUCCESSFUL==========\n");
+        System.out.println("***************" + customer.getName() + " " + customer.getSurname() + " bought " + purchase.getQuantity() + " " + product.getName() + "**************\n");
+
         return purchase;
-        //  ------------------------
 
     }
+
 }

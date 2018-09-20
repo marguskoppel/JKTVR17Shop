@@ -17,8 +17,9 @@ import javax.persistence.Id;
  */
 @Entity
 public class Product {
+
     @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Integer price;
@@ -111,5 +112,5 @@ public class Product {
     public String getProductName() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

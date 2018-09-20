@@ -143,10 +143,11 @@ public class Purchase {
 
     @Override
     public String toString() {
-        if(productReturn !=null)
+        if (productReturn != null) {
             return "Purchase{" + "id=" + id + ", product=" + product.getName() + ", customer=" + customer.getName() + " " + customer.getSurname() + ", productIssued=" + productIssued.toString() + ", productReturn=" + productReturn.toString() + ", quantity=" + quantity + '}';
-        else 
+        } else {
             return "Purchase{" + "id=" + id + ", product=" + product.getName() + ", customer=" + customer.getName() + " " + customer.getSurname() + ", productIssued=" + productIssued.toString() + ", productReturn=" + '}';
+        }
     }
 
 }

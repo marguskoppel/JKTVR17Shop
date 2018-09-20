@@ -18,30 +18,29 @@ import java.util.Scanner;
 public class ProductReturner {
 
     public Purchase returnPurchase(List<Purchase> purchases) {
-        
-            System.out.println("*************Product returning*************");
-            Purchase purchase = new Purchase();
-            Scanner scanner = new Scanner(System.in);
-            int countPurchases = purchases.size();
-            for (int i = 0; i < countPurchases; i++) {
-                Purchase purch = purchases.get(i);
-                System.out.println(i + 1 + ". " + purch.getCustomer().getName()
-                        + " " + purch.getCustomer().getSurname()
-                        + " " + purch.getProduct().getName());
 
-            }
-            System.out.println("Choose which product you want to return: ");
-            System.out.println("To not to do anything press -1");
-            int numPurchase = scanner.nextInt();
-            if (numPurchase < 0) {
-                return null;
-            }
-            purchase = purchases.get(numPurchase - 1);
-            purchases.remove(purchase);
-            Calendar c = new GregorianCalendar();
-            purchase.setProductReturn(c.getTime());
-            return purchase;
+        System.out.println("*************Product returning*************");
+        Purchase purchase = new Purchase();
+        Scanner scanner = new Scanner(System.in);
+        int countPurchases = purchases.size();
+        for (int i = 0; i < countPurchases; i++) {
+            Purchase purch = purchases.get(i);
+            System.out.println(i + 1 + ". " + purch.getCustomer().getName()
+                    + " " + purch.getCustomer().getSurname()
+                    + ": " + purch.getProduct().getName());
 
-         
+        }
+        System.out.println("Choose which product you want to return: ");
+        System.out.println("To not to do anything press -1");
+        int numPurchase = scanner.nextInt();
+        if (numPurchase < 0) {
+            return null;
+        }
+        purchase = purchases.get(numPurchase - 1);
+        purchases.remove(purchase);
+        Calendar c = new GregorianCalendar();
+        purchase.setProductReturn(c.getTime());
+        return purchase;
+
     }
 }

@@ -17,10 +17,11 @@ import javax.persistence.Id;
  */
 @Entity
 public class Customer {
+
     @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name; 
+    private String name;
     private String surname;
     private Integer money;
 
@@ -107,6 +108,5 @@ public class Customer {
     public String toString() {
         return "Customer{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", money=" + money + '}';
     }
-    
-}
 
+}

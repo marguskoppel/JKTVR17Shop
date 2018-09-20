@@ -13,7 +13,8 @@ import java.util.Scanner;
  * @author st0lu
  */
 public class CustomerCreator {
-    public Customer returnNewCustomer(){
+
+    public Customer returnNewCustomer() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("*****************Addind new Customer******************");
         Customer customer = new Customer();
@@ -26,16 +27,16 @@ public class CustomerCreator {
         customer.setSurname(scanner.nextLine());
         System.out.println("Money: ");
         customer.setMoney(scanner.nextInt());
-        System.out.println("To ADD press A\n To cancel press -1");
-        String add = "a";
+        System.out.println("To ADD press any button\n To cancel press -1");
+
         String yes = "";
         yes = scanner.next();
-        if(!add.equals(yes)){
-            System.out.println("*****Customer WAS NOT added *****");
+        if ("-1".equals(yes)) {
+            System.out.println("*****Customer WAS NOT added *****\n");
             return null;
-        }else{
-            System.out.println("***** Customer WAS added *****");
-        return customer;    
+        } else {
+            System.out.println("***** Customer " + customer.getName() + " " + customer.getSurname() + " WAS ADDED. He has: " + customer.getMoney() + " euros. *****\n");
+            return customer;
+        }
     }
-}
 }
