@@ -53,21 +53,21 @@ public class PurchaseCreator {
         System.out.println("Choose quantity: ");
         int quantity = scanner.nextInt();
         if (product.getCount() - quantity < 0) { //product quantity check
-            System.out.println("There is not enough product in the shop");
+            System.out.println("There is not enough product in the shop\n");
             return null;
 
         }
         if (product.getPrice() * quantity > customer.getMoney()) {//money check
-            System.out.println("Customer doesnt have enough money");
+            System.out.println("Customer doesnt have enough money\n");
             return null;
 
         }
         if (customer.getMoney() <= 0) { //customer money check
-            System.out.println("Customer doesnt have any money");
+            System.out.println("Customer doesnt have any money\n");
             return null;
         }
         if (product.getCount() <= 0) {//product count check
-            System.out.println("Ther is no more of this product at the shop");
+            System.out.println("There is no more of this product at the shop\n");
             return null;
 
         }
